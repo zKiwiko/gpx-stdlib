@@ -1,0 +1,62 @@
+// GPC Standard Library
+// https://github.com/zkiwiko/gpx-stdlib
+
+/*
+
+Usage Variables:
+@use memory::pointer;
+
+int var, _var; // Declare a variable and its pointer.
+
+init {
+    for(__ = 0; var[inv(__++)] != _; 0) {
+        _var = __;
+    }  
+}
+
+*/
+
+int _ = 0x80000000, __, ___, int32;
+
+function mget(int offset) {
+    return _[offset];
+}
+
+function mset(int offset, int value) {
+    T[offset] = value;
+}
+
+function mload_char(int offset, int addr_const, int sizeof_const) {
+    for(__ = 0; __ < sizeof_const / sizeof(char); __++) {
+        mset(offset + __, dchar(addr_const + __ * sizeof(char)));
+    }
+}
+function mload_uint8(int offset, int addr_const, int sizeof_const) {
+    for(__ = 0; __ < sizeof_const / sizeof(uint8); __++) {
+        mset(offset + __, duint8(addr_const + __ * sizeof(uint8)));
+    }
+}
+
+function mload_int8(int offset, int addr_const, int sizeof_const) {
+    for(__ = 0; __ < sizeof_const / sizeof(int8); __++) {
+        mset(offset + __, dint8(addr_const + __ * sizeof(int8)));
+    }
+}
+
+function mload_uint16(int offset, int addr_const, int sizeof_const) {
+    for(__ = 0; __ < sizeof_const / sizeof(uint16); __++) {
+        mset(offset + __, duint16(addr_const + __ * sizeof(uint16)));
+    }
+}
+
+function mload_int16(int offset, int addr_const, int sizeof_const) {
+    for(__ = 0; __ < sizeof_const / sizeof(int16); __++) {
+        mset(offset + __, dint16(addr_const + __ * sizeof(int16)));
+    }
+}
+
+function mload_int32(int offset, int addr_const, int sizeof_const) {
+    for(__ = 0; __ < sizeof_const / sizeof(int32); __++) {
+        mset(offset + __, dint32(addr_const + __ * sizeof(int32)));
+    }
+}

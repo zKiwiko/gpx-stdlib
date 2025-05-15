@@ -1,0 +1,9 @@
+{
+	"name": "std",
+	"version": "1.0.0",
+	"dependencies": [
+		"macros",
+		"memory",
+		"string"
+	]
+}
