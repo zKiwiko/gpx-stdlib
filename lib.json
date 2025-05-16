@@ -1,6 +1,7 @@
 {
 	"name": "std",
 	"version": "1.0.0",
+	"url": "https://github.com/zKiwiko/gpx-stdlib.git",
 	"dependencies": [
 		"macros",
 		"memory",
